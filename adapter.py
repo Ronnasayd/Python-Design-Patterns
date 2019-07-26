@@ -15,6 +15,7 @@ class Computer:
 class Adapter:
     def __init__(self, obj, adapted_methods):
         self.obj = obj
+        self.name = self.obj.name
         self.__dict__.update(adapted_methods)
 
     def __str__(self):
@@ -29,6 +30,8 @@ def main():
     objects.append(Adapter(human, dict(execute=human.speak)))
     for i in objects:
         print('{} {}'.format(str(i), i.execute()))
+    # for i in objects:
+    #     print(i.name)
 
 
 if __name__ == "__main__":

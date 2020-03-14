@@ -20,7 +20,7 @@
 
 Este padrão permite a criação de famílias de objetos relacionados ou dependentes por meio de uma única interface e sem que a classe concreta seja especificada. Uma fábrica é a localização de uma classe concreta no código em que objetos são construídos . O objetivo em empregar o padrão é isolar a criação de objetos de seu uso e criar famílias de objetos relacionados sem ter que depender de suas classes concretas. Isto permite novos tipos derivados de ser introduzidas sem qualquer alteração ao código que usa a classe base . O uso deste padrão torna possível trocar implementações concretas sem alterar o código que estas usam, mesmo em tempo de execução. No entanto, o emprego deste padrão, como acontece com outros padrões semelhantes, pode resultar em uma complexidade desnecessária e trabalho extra no início do código. Além disso, os níveis mais elevados de abstração podem resultar em sistemas que são mais difíceis de manter. A essência do padrão Abstract Factory é fornecer uma interface para criar famílias de objetos relacionados ou dependentes sem especificar suas classes concretas. 
 
-![abstract factory](./img/abstract_factory.jpeg)
+<p style="text-align:center;"><img src="./img/abstract_factory.jpeg"></p>
 
 ## Adapter
 
@@ -32,7 +32,8 @@ O padrão Adapter pode ser utilizado quando:
 * o desenvolvedor quiser criar classes reutilizáveis que cooperem com classes não-relacionadas ou não-previstas, ou seja, classes que não possuem necessariamente interfaces compatíveis;
 * (exclusivamente para adaptadores de objetos) é necessário utilizar muitas subclasses existentes, porém, impossível de adaptar essas interfaces criando subclasses para cada uma. Um adaptador de objeto pode adaptar a interface de sua classe mãe.
 
-![Adapter](./img/adapter.png)
+<p style="text-align:center;"><img src="./img/adapter.png"></p>
+
 
 ## Builder
 
@@ -48,7 +49,8 @@ Builder é um padrão de projeto de software criacional que permite a separaçã
 
 * Requer criar um concrete builder específico para cada instância diferente do produto.
 
-![builder](./img/builder.png)
+<p style="text-align:center;"><img src="./img/builder.png"></p>
+
 
 ## Chain of Responsability
 
@@ -65,14 +67,16 @@ Devido à isso, é um padrão que utiliza a ideia de baixo acoplamento por permi
 * O cliente lança e deixa cada request com a raiz da cadeia;
 * As delegações recursivas produzem um efeito de ilusão;
 
-![chain of responsability](./img/chain_of_responsiblity.jpg)
+<p style="text-align:center;"><img src="./img/chain_of_responsiblity.jpg"></p>
+
 
 ## Command
 Command é um dos 11 padrões comportamentais dentre os 23 padrões de projeto de software do GOF. Na programação orientada a objeto, o command é um padrão no qual um objeto é usado para encapsular toda informação necessária para executar uma ação ou acionar um evento em um momento posterior
 
 O Padrão Command tem como definição encapsular uma solicitação como um objeto, o que lhe permite parametrizar outros objetos com diferentes solicitações, enfileirar ou registrar solicitações e implementar recursos de cancelamento de operações. Isso inclui informações como o nome do método, o objeto que o método pertence e os valores dos parâmetros do método. 
 
-![command](./img/command.jpg)
+<p style="text-align:center;"><img src="./img/command.jpg"></p>
+
 
 ## Decorator
 
@@ -88,7 +92,8 @@ Decorator, wrapper (ou em português Decorador), é um padrão de projeto de sof
 * pode usar um ou mais decoradores para englobar um objeto
 * Os padrões Decorador e Composite podem ser visto como similares, uma vez que ambos usam o princípio de recursividade. O decorator pode ser visto como uma versão simplificada do padrão Composite, porém o Decorator apenas adiciona responsabilidades adicionais e não é usado para agregar objetos
 
-![decorator](./img/decorator.png)
+<p style="text-align:center;"><img src="./img/decorator.png"></p>
+
 
 ## Facade
 
@@ -104,7 +109,8 @@ O Padrão Facade pode ser usado quando :
 * São muitas as dependências entre clientes e classes de implementação.
 * Há o interesse em dividir seus subsistemas em camadas. Use um facade para definir um ponto de entrada para cada nível de subsistema. Se seus subsistemas são dependentes, essas dependências podem ser simplificadas entre sí ao se comunicarem unica e exclusivamente pelo facade.
 
-![facade](./img/facade.png)
+<p style="text-align:center;"><img src="./img/facade.png"></p>
+
 
 ## Factory Method
 
@@ -117,7 +123,8 @@ Factory Method ou Construtor virtual, na ciência da computação, é um padrão
 * Quando você não quer que o usuário tenha que saber de cada subclasse.
 * Encapsular a criação de objetos.
 
-![factory method](./img/factory_method.png)
+<p style="text-align:center;"><img src="./img/factory_method.png"></p>
+
 
 ## Flyweight
 
@@ -125,7 +132,8 @@ Flyweight é um padrão de projeto de software apropriado quando vários objetos
 
 Um exemplo é o processador de texto. Cada caractere representa um objeto que possui uma família de fonte, um tamanho de fonte e outras informações sobre o símbolo. Como imaginado, um documento grande com tal estrutura de dados facilmente ocuparia toda a memória disponível no sistema. Para resolver o problema, como muitas dessas informações são repetidas, o flyweight é usado para reduzir os dados. Cada objeto de caractere contém uma referência para outro objeto com suas respectivas propriedades. 
 
-![flyweight](./img/flyweight.png)
+<p style="text-align:center;"><img src="./img/flyweight.png"></p>
+
 
 
 ## Interpreter
@@ -139,7 +147,8 @@ Dada uma determinada linguagem, o padrão Interpreter define uma representação
 * Uso em expressões regulares ou XML.
 * Uso de interpretação de formato em datas como DD-MM-AAAA ou MM-DD-AAAA.
 
-![interpreter](./img/interpreter.png)
+<p style="text-align:center;"><img src="./img/interpreter.png"></p>
+
 
 ## Model View Controller
 
@@ -155,7 +164,8 @@ Além de dividir a aplicação em três tipos de componentes, o desenho MVC defi
 * Um modelo (model) armazena dados e notifica suas visões e controladores associados quando há uma mudança em seu estado. Estas notificações permitem que as visões produzam saídas atualizadas e que os controladores alterem o conjunto de comandos disponíveis. Uma implementação passiva do MVC monta estas notificações, devido a aplicação não necessitar delas ou a plataforma de software não suportá-las.
 * A visão (view) gera uma representação (Visão) dos dados presentes no modelo solicitado, fazendo a exibição dos dados, sendo ela por meio de um html ou xml.
 
-![mvc](./img/mvc.png)
+<p style="text-align:center;"><img src="./img/mvc.png"></p>
+
 
 ## Observer
 
@@ -165,7 +175,8 @@ O padrão Observer é também chamado de Publisher-Subscriber, Event Generator e
 
 O padrão Observer pode ser usado quando uma abstração tem dois aspectos, um dependente do outro. Encapsular tais aspectos em objetos separados permite que variem e sejam reusados separadamente. Quando uma mudança a um objeto requer mudanças a outros e você não sabe quantos outros objetos devem mudar ou quando um objeto deve ser capaz de avisar outros sem fazer suposições sobre quem são os objetos. Em outras palavras, sem criar um acoplamento forte entre os objetos. 
 
-![observer](./img/observer.svg)
+<p style="text-align:center;"><img src="./img/observer.svg"></p>
+
 
 ## Prototype
 
@@ -183,4 +194,4 @@ O padrão Prototype é aplicado quando existe a necessidade de clonar, literalme
 * sistemas que utilizam o padrão Abstract Factory para criação de objetos. Neste caso, a hierarquia de classes pode se tornar muito complexa e o padrão Prototype pode ser uma alternativa mais simples, por realizar a mesma tarefa com um número reduzido de classes;
 * sistemas que possuem componentes cujo estado inicial possui poucas variações e onde é conveniente disponibilizar um conjunto preestabelecido de protótipos que dão origem aos objetos que compõem o sistema.
 
-![prototype](./img/prototype.png)
+<p style="text-align:center;"><img src="./img/prototype.png"></p>

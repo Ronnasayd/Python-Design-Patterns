@@ -15,6 +15,10 @@
 11. [Model View Controller](#model-view-controller)
 12. [Observer](#observer)
 13. [Prototype](#prototype)
+13. [Proxy](#proxy)
+14. [State](#state)
+15. [Strategy](#strategy)
+16. [Template](#template)
 
 ## Abstract Factory
 
@@ -195,3 +199,59 @@ O padrão Prototype é aplicado quando existe a necessidade de clonar, literalme
 * sistemas que possuem componentes cujo estado inicial possui poucas variações e onde é conveniente disponibilizar um conjunto preestabelecido de protótipos que dão origem aos objetos que compõem o sistema.
 
 <p style="text-align:center;"><img src="./img/prototype.png"></p>
+
+
+## Proxy
+
+Um proxy, em sua forma mais geral, é uma classe que funciona como uma interface para outra coisa. O proxy pode fazer interface com qualquer coisa: uma conexão de rede, um objeto grande na memória, um arquivo ou algum outro recurso caro ou impossível de duplicar. Em resumo, um proxy é um objeto de invólucro ou agente que está sendo chamado pelo cliente para acessar o objeto de veiculação real nos bastidores. O uso do proxy pode simplesmente ser encaminhado para o objeto real ou pode fornecer lógica adicional. No proxy, pode ser fornecida funcionalidade extra, por exemplo, armazenamento em cache quando as operações no objeto real requerem muitos recursos ou verificação de condições prévias antes que as operações no objeto real sejam invocadas. Para o cliente, o uso de um objeto proxy é semelhante ao uso do objeto real, porque ambos implementam a mesma interface.
+
+
+<p style="text-align:center;"><img src="./img/proxy.png"></p>
+
+
+## State 
+
+O padrão de estado é um padrão de design de software comportamental que permite que um objeto altere seu comportamento quando seu estado interno for alterado. Esse padrão está próximo do conceito de máquinas de estado finito. O padrão de estado pode ser interpretado como um padrão de estratégia, capaz de alternar uma estratégia através de invocações de métodos definidos na interface do padrão.
+
+O padrão de estado é usado na programação de computadores para encapsular comportamentos variáveis ​​para o mesmo objeto, com base em seu estado interno. Essa pode ser uma maneira mais limpa de um objeto alterar seu comportamento em tempo de execução sem recorrer a instruções condicionais e, assim, melhorar a capacidade de manutenção.
+
+### O padrão de estado está definido para resolver dois problemas principais: 
+
+* Um objeto deve mudar seu comportamento quando seu estado interno mudar.
+* O comportamento específico do estado deve ser definido independentemente. Ou seja, adicionar novos estados não deve afetar o comportamento dos estados existentes.
+
+<p style="text-align:center;"><img src="./img/state.gif"></p>
+
+## Strategy
+
+Strategy é um padrão de projeto de software (do inglês design pattern), pode ser chamado de policy. Este padrão foi documentado no Catálogo GOF (Gang of Four), sendo categorizado como um padrão comportamental de desenvolvimento de software.  De modo que delega as responsabilidades adquiridas pelas entidades, atribuindo, portanto, o comportamento. Assim a comunicação entre os objetos é aprimorada, pois há a distribuição das responsabilidades. O objetivo é representar uma operação a ser realizada sobre os elementos de uma estrutura de objetos. O padrão Strategy permite definir novas operações sem alterar as classes dos elementos sobre os quais opera. Segundo o catálogo GOF o padrão tem como meta: "Definir uma família de algoritmos, encapsular cada uma delas e torná-las intercambiáveis. Strategy permite que o algoritmo varie independentemente dos clientes que o utilizam."
+
+### O padrão tem como habilidade:
+
+* Define uma família de algoritmos;
+* Encapsular cada algoritmo como uma classe;
+* Permite que eles possam ser trocados entre si.
+* Este padrão permite que o algoritmo possa variar independentemente dos clientes que o utilizam.
+
+O padrão é aplicado em situações em que muitas classes se relacionam e diferem apenas no modo de atuação, com isso o Strategy irá configurar a classe que tenha um dentre muitos comportamentos fornecidos. Também pode ser usado quando há a necessidade da variação de um algoritmo, ou seja, pode-se implementar diferentes códigos que chegam no mesmo objetivo, mas que possuem em determinadas situações mais vantagens do que os demais.
+
+Outra situação oportuna para o uso do padrão é em uma aplicação na qual se tem um cliente e este não pode ficar exposto a estrutura de dados do algoritmo. Além disso, quando uma classe tem muitos comportamentos e usam vários comandos condicionais, o desempenho do algoritmo poderá ficar insatisfatório, pois há a possibilidade de existir uma quantidade grande de condições, podendo deixar o código mais lento. Com o padrão pode-se retirar as condições, criando novas classes com estas estratégias, portanto melhorando desempenho.  
+
+<p style="text-align:center;"><img src="./img/strategy.jpg"></p>
+
+
+## Template
+
+Um Template Method auxilia na definição de um algoritmo com partes do mesmo definidos por métodos abstratos. As subclasses devem se responsabilizar por estas partes abstratas, deste algoritmo, que serão implementadas, possivelmente de várias formas, ou seja, cada subclasse irá implementar à sua necessidade e oferecer um comportamento concreto construindo todo o algoritmo.
+
+O Template Method fornece uma estrutura fixa, de um algoritmo, esta parte fixa deve estar presente na superclasse, sendo obrigatório uma classeAbstrata que possa conter um método concreto, pois em uma interface só é possível conter métodos abstratos que definem um comportamento, esta é a vantagem de ser uma Classe Abstrata porque também irá fornecer métodos abstratos às suas subclasses, que por sua vez herdam este método, por Herança (programação), e devem implementar os métodos abstratos fornecendo um comportamento concreto aos métodos que foram definidos como abstratos. Com isso certas partes do algoritmo serão preenchidos por implementações que irão variar, ou seja, implementar um algoritmo em um método, postergando a definição de alguns passos do algoritmo, para que outras classes possam redefiní-los. 
+
+### Uso
+
+O método de template é usado em estruturas, nas quais cada uma implementa as partes invariantes da arquitetura de um domínio, enquanto fornece métodos de gancho para personalização. Este é um exemplo de inversão de controle. O método do template é usado pelos seguintes motivos.
+
+* Permite que as subclasses implementem comportamentos variados (substituindo os métodos de gancho).
+* Evita duplicação no código: o fluxo de trabalho geral do algoritmo é implementado uma vez no método de modelo da classe abstrata e as variações necessárias são implementadas nas subclasses. 
+* Controla o (s) ponto (s) em que a especialização é permitida. Se as subclasses simplesmente substituíssem o método do modelo, elas poderiam fazer alterações radicais e arbitrárias no fluxo de trabalho. Por outro lado, substituindo apenas os métodos de gancho, apenas certos detalhes específicos do fluxo de trabalho podem ser alterados  e o fluxo de trabalho geral é deixado intacto.
+
+<p style="text-align:center;"><img src="./img/template.jpg"></p>
